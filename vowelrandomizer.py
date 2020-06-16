@@ -26,6 +26,6 @@ if __name__=="__main__":
     output_file = open(filename.replace(".txt", "_output.txt"), "w")
     for line in lines:
         for char in line:
-            output_file.write(randomize(char));
+            output_file.write(randomize(char))
     output_file.close()
 
