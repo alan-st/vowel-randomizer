@@ -4,11 +4,14 @@ import random
 def file_prompt():
     while True:
         filename = input("What is the name of the file you want to randomize? (for example: example.txt) ")
-        try:
-            file = open(filename, 'r')
-            return filename, file
-        except FileNotFoundError:
-            print("File '{}' doesn't exist in current directory!".format(filename))
+        if filename.endswith(".txt"):
+            try:
+                file = open(filename, 'r')
+                return filename, file
+            except FileNotFoundError:
+                print("File '{}' doesn't exist in current directory!".format(filename))
+        else:
+            print("File must be a .txt file.")
 
 def randomize(letter: str):
     vowels = "aeiou"
